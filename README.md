@@ -140,3 +140,5 @@ feat(button): crea componente botón base
 - versioning
 - changelog
 - release workflow
+
+![Inspiración](./recursos/inspiration.jpg)
