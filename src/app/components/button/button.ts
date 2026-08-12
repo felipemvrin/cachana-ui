@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
+export type ButtonSize = 'sm' | 'md' | 'lg';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <button
       class="c-button"
@@ -88,6 +88,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
 })
 export class ButtonComponent {
   @Input() variant: ButtonVariant = 'primary';
+  @Input() size: ButtonSize = 'md';
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
   @Input() disabled = false;
 

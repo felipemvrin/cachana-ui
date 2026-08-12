@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { BadgeComponent } from '../../components/badge/badge';
 import { ButtonComponent } from '../../components/button/button';
 import { CardComponent } from '../../components/card/card';
@@ -8,7 +8,6 @@ import { InputComponent } from '../../components/input/input';
   selector: 'app-home',
   standalone: true,
   imports: [BadgeComponent, ButtonComponent, CardComponent, InputComponent],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <main class="home-shell">
       <header class="topbar container">

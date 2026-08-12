@@ -13,10 +13,7 @@ describe('InputComponent', () => {
   it('marks the field as invalid when state is error', () => {
     const component = new InputComponent();
     component.state = 'error';
-
-    const inputEl = document.createElement('input');
-    inputEl.value = 'canch@';
-    component.onInput({ target: inputEl } as unknown as Event);
+    component.onInput({ target: { value: 'canch@' } } as unknown as Event);
 
     expect(component.state).toBe('error');
     expect(component.value).toBe('canch@');
