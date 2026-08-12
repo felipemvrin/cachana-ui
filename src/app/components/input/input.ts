@@ -1,12 +1,13 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 export type InputState = 'default' | 'error';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgIf],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <label class="c-input" [class.c-input--error]="state === 'error'">
       <span class="c-input__label" *ngIf="label">{{ label }}</span>
@@ -79,7 +80,8 @@ export class InputComponent {
   @Input() ariaLabel = '';
 
   onInput(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    this.value = input.value;
+    if (event.target instanceof HTMLInputElement) {
+      this.value = event.target.value;
+    }
   }
 }

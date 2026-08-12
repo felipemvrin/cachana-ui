@@ -1,12 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 export type BadgeVariant = 'neutral' | 'success' | 'warning' | 'error';
 
 @Component({
   selector: 'app-badge',
   standalone: true,
+  imports: [NgClass],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <span class="c-badge" [class]="'c-badge--' + variant">
+    <span class="c-badge" [ngClass]="variantClass">
       <ng-content></ng-content>
     </span>
   `,
@@ -50,4 +53,8 @@ export type BadgeVariant = 'neutral' | 'success' | 'warning' | 'error';
 })
 export class BadgeComponent {
   @Input() variant: BadgeVariant = 'neutral';
+
+  protected get variantClass(): string {
+    return `c-badge--${this.variant}`;
+  }
 }
