@@ -1,0 +1,38 @@
+[22:05:41.504] [INFO] storybook v10.5.7
+[22:05:43.144] [DEBUG] Getting package.json info for /Users/felipemarin/Documents/Projects/cachaña-ui/app/package.json...
+[22:05:43.179] [WARN] Could not resolve addon "@storybook/addon-links", skipping. Is it installed?
+[22:05:43.192] [WARN] Could not resolve addon "@storybook/addon-essentials", skipping. Is it installed?
+[22:05:43.216] [WARN] Could not resolve addon "@storybook/addon-docs", skipping. Is it installed?
+[22:05:43.226] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0002 (CriticalPresetLoadError): Storybook failed to load the following preset: @storybook/angular/preset.
+
+Please check whether your setup is correct, the Storybook dependencies (and their peer dependencies) are installed correctly and there are no package version clashes.
+
+If you believe this is a bug, please open an issue on Github.
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@storybook/angular' imported from /Users/felipemarin/.npm/_npx/6fe9a9991b157df1/node_modules/storybook/dist/_node-chunks/chunk-OS6I5BZG.js
+    at packageResolve (node:internal/modules/esm/resolve:857:9)
+    at moduleResolve (node:internal/modules/esm/resolve:926:18)
+    at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+    at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+    at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+
+More info: 
+[39m
+    at loadPreset (file:///Users/felipemarin/.npm/_npx/6fe9a9991b157df1/node_modules/storybook/dist/_node-chunks/chunk-LEFX2TGG.js:13569:13)
+    at async Promise.all (index 0)
+    at async loadPresets (file:///Users/felipemarin/.npm/_npx/6fe9a9991b157df1/node_modules/storybook/dist/_node-chunks/chunk-LEFX2TGG.js:13578:73)
+    at async getPresets (file:///Users/felipemarin/.npm/_npx/6fe9a9991b157df1/node_modules/storybook/dist/_node-chunks/chunk-LEFX2TGG.js:13609:23)
+    at async buildDevStandalone (file:///Users/felipemarin/.npm/_npx/6fe9a9991b157df1/node_modules/storybook/dist/core-server/index.js:11924:52)
+    at async withTelemetry (file:///Users/felipemarin/.npm/_npx/6fe9a9991b157df1/node_modules/storybook/dist/_node-chunks/chunk-XYZ5NBEV.js:1785:12)
+    at async dev (file:///Users/felipemarin/.npm/_npx/6fe9a9991b157df1/node_modules/storybook/dist/bin/core.js:3850:3)
+    at async _Command.<anonymous> (file:///Users/felipemarin/.npm/_npx/6fe9a9991b157df1/node_modules/storybook/dist/bin/core.js:3958:3)
+[22:05:43.259] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
+[22:05:43.285] [WARN] Could not resolve addon "@storybook/addon-links", skipping. Is it installed?
+[22:05:43.285] [WARN] Could not resolve addon "@storybook/addon-essentials", skipping. Is it installed?
+[22:05:43.286] [WARN] Could not resolve addon "@storybook/addon-docs", skipping. Is it installed?
+[22:05:51.735] [PROMPT] Would you like to send anonymous crash reports to improve Storybook and fix bugs faster? {"choice":true}
+[22:05:51.738] [INFO] Storybook collects completely anonymous usage telemetry. We use it to shape Storybook's roadmap and prioritize features. You can learn more, including how to opt out, at https://storybook.js.org/telemetry

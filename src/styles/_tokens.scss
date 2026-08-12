@@ -1,0 +1,58 @@
+:root {
+  --color-background: #f6f1e7;
+  --color-surface: #fdfaf3;
+  --color-surface-muted: #efe4d4;
+  --color-text: #1f261f;
+  --color-text-muted: #4d544d;
+  --color-border: #d4c3a5;
+  --color-primary: #254b3a;
+  --color-secondary: #7a4b2a;
+  --color-accent: #f5b21b;
+  --color-success: #3d6c52;
+  --color-warning: #d7912d;
+  --color-error: #ad3f2d;
+  --color-info: #5d7d8f;
+  --color-forest: #183b2d;
+  --color-forest-soft: #3d5d48;
+  --color-micro: #f7c736;
+  --color-lake: #7ea3b3;
+  --color-sand: #e7d5b4;
+  --color-clay: #9d654a;
+  --color-wood: #8b5e3d;
+
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-48: 12rem;
+  --space-64: 16rem;
+
+  --radius-none: 0;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 9999px;
+
+  --font-display: 'Impact', 'Arial Black', 'Segoe UI', sans-serif;
+  --font-heading: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+
+  --shadow-none: none;
+  --shadow-sm: 0 2px 12px rgba(31, 38, 31, 0.08);
+  --shadow-md: 0 6px 24px rgba(31, 38, 31, 0.12);
+
+  --motion-fast: 150ms ease;
+  --motion-normal: 220ms ease;
+  --motion-slow: 320ms ease;
+
+  --border-width: 1px;
+  --container-max: 1200px;
+}
