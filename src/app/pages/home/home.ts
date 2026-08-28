@@ -190,7 +190,8 @@ import { InputComponent } from '../../components/input/input';
 
     .display-title {
       font-size: clamp(3rem, 6vw, 5.5rem);
-      max-width: 12ch;
+      width: 100%;
+      max-width: none;
       text-wrap: balance;
     }
 

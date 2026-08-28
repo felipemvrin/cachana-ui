@@ -25,4 +25,14 @@ describe('CardComponent', () => {
     const article = fixture.nativeElement.querySelector('article');
     expect(article.classList).toContain('c-card--featured');
   });
+
+  it('keeps a distinct visual treatment for the featured variant', () => {
+    const styles = (
+      (CardComponent as unknown as { ɵcmp?: { styles?: string[] } }).ɵcmp?.styles ?? []
+    ).join(' ');
+
+    expect(styles).toMatch(
+      /\.c-card--featured(?:\[[^\]]+\])?\s*\{[^}]*box-shadow:\s*var\(--shadow-05\);/s,
+    );
+  });
 });

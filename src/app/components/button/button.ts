@@ -41,7 +41,7 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
         background var(--motion-fast),
         transform var(--motion-fast),
         box-shadow var(--motion-fast);
-      box-shadow: var(--shadow-02);
+      box-shadow: var(--shadow-04);
     }
 
     .c-button:hover:not(:disabled) {
@@ -50,7 +50,7 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
 
     .c-button:active:not(:disabled) {
       transform: translate(2px, 3px);
-      box-shadow: none;
+      box-shadow: var(--shadow-none);
     }
 
     .c-button:focus-visible {
@@ -61,28 +61,24 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
     .c-button:disabled {
       cursor: not-allowed;
       opacity: 0.55;
-      box-shadow: none;
     }
 
     .c-button--primary {
       background: var(--color-micro-amarillo);
       border-color: var(--color-border-strong);
       color: var(--color-text-primary);
-      box-shadow: var(--shadow-04);
     }
 
     .c-button--secondary {
       background: var(--color-surface);
       border-color: var(--color-border-strong);
       color: var(--color-text-primary);
-      box-shadow: var(--shadow-01);
     }
 
     .c-button--ghost {
       background: transparent;
       border-color: var(--color-border-strong);
       color: var(--color-text-primary);
-      box-shadow: none;
     }
 
     .c-button--sm {
