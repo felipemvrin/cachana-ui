@@ -130,9 +130,7 @@ import { InputComponent } from '../../components/input/input';
 
     .home-shell {
       min-height: 100vh;
-      background:
-        radial-gradient(circle at top left, rgba(247, 199, 54, 0.25), transparent 24%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(246, 241, 231, 0.92));
+      background: var(--color-background);
     }
 
     .topbar {
@@ -158,8 +156,8 @@ import { InputComponent } from '../../components/input/input';
       width: 2rem;
       height: 2rem;
       border-radius: var(--radius-sm);
-      background: var(--color-primary);
-      color: white;
+      background: var(--color-bosque);
+      color: var(--color-text-inverse);
       font-size: 1rem;
     }
 
@@ -167,12 +165,12 @@ import { InputComponent } from '../../components/input/input';
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      color: var(--color-text-muted);
+      color: var(--color-text-secondary);
       font-size: 0.9rem;
     }
 
     .topnav a:hover {
-      color: var(--color-primary);
+      color: var(--color-bosque);
     }
 
     .hero {
@@ -197,7 +195,7 @@ import { InputComponent } from '../../components/input/input';
 
     .hero__content p {
       max-width: 62ch;
-      color: var(--color-text-muted);
+      color: var(--color-text-secondary);
       font-size: 1.08rem;
     }
 
@@ -214,7 +212,7 @@ import { InputComponent } from '../../components/input/input';
       padding: 0;
       margin: 0;
       list-style: none;
-      color: var(--color-text-muted);
+      color: var(--color-text-secondary);
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -227,8 +225,8 @@ import { InputComponent } from '../../components/input/input';
 
     .route-card {
       width: min(100%, 360px);
-      background: linear-gradient(160deg, rgba(24, 59, 45, 0.94), rgba(37, 75, 58, 0.88));
-      color: white;
+      background: var(--color-arrayan);
+      color: var(--color-text-inverse);
       border-radius: 1.5rem;
       padding: 1.5rem;
       box-shadow: var(--shadow-md);
@@ -242,7 +240,7 @@ import { InputComponent } from '../../components/input/input';
     }
 
     .route-card small {
-      color: rgba(255, 255, 255, 0.8);
+      color: color-mix(in srgb, var(--color-text-inverse) 80%, transparent);
     }
 
     .route-card__stats {
@@ -250,7 +248,7 @@ import { InputComponent } from '../../components/input/input';
       justify-content: space-between;
       gap: 1rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      border-top: 1px solid color-mix(in srgb, var(--color-text-inverse) 15%, transparent);
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -279,7 +277,7 @@ import { InputComponent } from '../../components/input/input';
     .section-grid p,
     .work p,
     .about p {
-      color: var(--color-text-muted);
+      color: var(--color-text-secondary);
       margin: 0;
     }
 
@@ -293,7 +291,7 @@ import { InputComponent } from '../../components/input/input';
     .mini-card {
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.38);
+      background: color-mix(in srgb, var(--color-surface) 38%, transparent);
       padding: 1.5rem;
       display: grid;
       gap: 0.7rem;
@@ -302,7 +300,7 @@ import { InputComponent } from '../../components/input/input';
     .mini-card span {
       font-family: var(--font-mono);
       font-size: 0.8rem;
-      color: var(--color-primary);
+      color: var(--color-bosque);
     }
 
     .mini-card h3 {
@@ -319,7 +317,7 @@ import { InputComponent } from '../../components/input/input';
     .about__form {
       display: grid;
       gap: 1rem;
-      background: rgba(255, 255, 255, 0.5);
+      background: color-mix(in srgb, var(--color-surface) 50%, transparent);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
       padding: 1.5rem;
@@ -330,7 +328,7 @@ import { InputComponent } from '../../components/input/input';
       text-transform: uppercase;
       letter-spacing: 0.08em;
       font-weight: 700;
-      color: var(--color-text-muted);
+      color: var(--color-text-secondary);
     }
 
     @media (max-width: 860px) {
