@@ -13,15 +13,24 @@ export type CardVariant = 'default' | 'featured';
   styles: `
     .c-card {
       background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      padding: 1.5rem;
+      border: 2px solid var(--color-border-strong);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-03);
+      padding: var(--space-6);
+      transition:
+        box-shadow var(--motion-normal),
+        transform var(--motion-normal);
+    }
+
+    .c-card:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: var(--shadow-05);
     }
 
     .c-card--featured {
-      background: linear-gradient(135deg, rgba(247, 199, 54, 0.1), rgba(37, 75, 58, 0.08));
-      border-color: rgba(37, 75, 58, 0.28);
+      background: var(--color-surface);
+      border-color: var(--color-border-strong);
+      box-shadow: var(--shadow-05);
     }
   `,
 })

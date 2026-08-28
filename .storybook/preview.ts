@@ -6,9 +6,9 @@ const preview: Preview = {
     backgrounds: {
       default: 'cachana',
       values: [
-        { name: 'cachana', value: '#f6f1e7' },
-        { name: 'forest', value: '#183b2d' },
-        { name: 'micro', value: '#f7c736' },
+        { name: 'cachana', value: '#f5efdd' },
+        { name: 'forest', value: '#2e8e3e' },
+        { name: 'micro', value: '#ffd100' },
       ],
     },
   },

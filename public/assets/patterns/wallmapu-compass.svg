@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Compass rose">
+  <g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round">
+    <path d="M50 5 61 39 95 50 61 61 50 95 39 61 5 50 39 39Z" />
+    <path d="M50 18 56 44 82 50 56 56 50 82 44 56 18 50 44 44Z" />
+  </g>
+  <path fill="#d52b1e" d="m50 5 6 39-6 6-6-6Z" />
+  <path fill="#0033a0" d="m95 50-39 6-6-6 6-6Z" />
+</svg>

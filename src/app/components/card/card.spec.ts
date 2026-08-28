@@ -1,10 +1,28 @@
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CardComponent } from './card';
 
 describe('CardComponent', () => {
-  it('renders content inside the card', () => {
-    const component = new CardComponent();
-    component.variant = 'featured';
+  let fixture: ComponentFixture<CardComponent>;
 
-    expect(component.variant).toBe('featured');
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [CardComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(CardComponent);
+    fixture.detectChanges();
+  });
+
+  it('renders an article element with the base card class', () => {
+    const article = fixture.nativeElement.querySelector('article');
+    expect(article).toBeTruthy();
+    expect(article.classList).toContain('c-card');
+  });
+
+  it('applies the featured class when variant is featured', () => {
+    fixture.componentRef.setInput('variant', 'featured');
+    fixture.detectChanges();
+    const article = fixture.nativeElement.querySelector('article');
+    expect(article.classList).toContain('c-card--featured');
   });
 });
