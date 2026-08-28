@@ -99,7 +99,8 @@
             "configDir": ".storybook",
             "browserTarget": "cachana-ui:build",
             "tsConfig": ".storybook/tsconfig.json",
-            "compodoc": false
+            "compodoc": false,
+            "styles": ["src/styles.scss"]
           }
         },
         "build-storybook": {
@@ -109,7 +110,8 @@
             "browserTarget": "cachana-ui:build",
             "tsConfig": ".storybook/tsconfig.json",
             "outputDir": "dist-storybook",
-            "compodoc": false
+            "compodoc": false,
+            "styles": ["src/styles.scss"]
           }
         }
       }
