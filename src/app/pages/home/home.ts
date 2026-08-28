@@ -4,6 +4,9 @@ import { ButtonComponent } from '../../components/button/button';
 import { CardComponent } from '../../components/card/card';
 import { InputComponent } from '../../components/input/input';
 
+export const STORYBOOK_URL = 'http://localhost:6006';
+export const STORYBOOK_WINDOW_FEATURES = 'noopener,noreferrer';
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -347,7 +350,11 @@ import { InputComponent } from '../../components/input/input';
   `,
 })
 export class HomePageComponent {
+  private getWindow(): Pick<Window, 'open'> | undefined {
+    return typeof window !== 'undefined' ? window : undefined;
+  }
+
   openStorybook(): void {
-    window.open('http://localhost:6006', '_blank', 'noopener,noreferrer');
+    this.getWindow()?.open(STORYBOOK_URL, '_blank', STORYBOOK_WINDOW_FEATURES);
   }
 }
