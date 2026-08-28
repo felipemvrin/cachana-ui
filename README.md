@@ -117,6 +117,8 @@ feat(button): crea componente botón base
 
 ### Fase 2
 
+- Pruebas de accesibilidad para los componentes base
+- Documentación de estados y casos de uso en Storybook
 - Modal
 - Select
 - Checkbox
@@ -140,5 +142,9 @@ feat(button): crea componente botón base
 - versioning
 - changelog
 - release workflow
+
+## Estado actual
+
+La próxima fase activa es accesibilidad y contratos de componentes. El trabajo se desarrolla en la rama `test/accessibility-components`; el avance detallado está en [docs/PROJECT_PROGRESS.md](docs/PROJECT_PROGRESS.md).
 
 ![Inspiración](./recursos/inspiration.jpg)

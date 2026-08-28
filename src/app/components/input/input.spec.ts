@@ -34,6 +34,20 @@ describe('InputComponent', () => {
     expect(fixture.nativeElement.querySelector('.c-input__label')).toBeNull();
   });
 
+  it('uses the visible label as the input accessible name', () => {
+    fixture.componentRef.setInput('label', 'Nombre');
+    fixture.detectChanges();
+    const input = fixture.nativeElement.querySelector('input');
+    expect(input.getAttribute('aria-label')).toBe('Nombre');
+  });
+
+  it('disables the native input when disabled is true', () => {
+    fixture.componentRef.setInput('disabled', true);
+    fixture.detectChanges();
+    const input = fixture.nativeElement.querySelector('input');
+    expect(input.disabled).toBe(true);
+  });
+
   it('applies error class and aria-invalid when state is error', () => {
     fixture.componentRef.setInput('state', 'error');
     fixture.detectChanges();

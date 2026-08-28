@@ -25,4 +25,11 @@ describe('BadgeComponent', () => {
     const span = fixture.nativeElement.querySelector('span');
     expect(span.classList).toContain('c-badge--success');
   });
+
+  it('renders as non-interactive content without a misleading role', () => {
+    const span = fixture.nativeElement.querySelector('span');
+    expect(span.tagName).toBe('SPAN');
+    expect(span.getAttribute('role')).toBeNull();
+    expect(span.querySelector('button, a, input')).toBeNull();
+  });
 });

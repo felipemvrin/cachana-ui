@@ -26,6 +26,12 @@ describe('CardComponent', () => {
     expect(article.classList).toContain('c-card--featured');
   });
 
+  it('uses article semantics for a self-contained content region', () => {
+    const article = fixture.nativeElement.querySelector('article');
+    expect(article.tagName).toBe('ARTICLE');
+    expect(article.getAttribute('role')).toBeNull();
+  });
+
   it('keeps a distinct visual treatment for the featured variant', () => {
     const styles = (
       (CardComponent as unknown as { ɵcmp?: { styles?: string[] } }).ɵcmp?.styles ?? []
