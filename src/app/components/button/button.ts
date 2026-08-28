@@ -50,6 +50,7 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
 
     .c-button:active:not(:disabled) {
       transform: translate(2px, 3px);
+      box-shadow: var(--shadow-none);
     }
 
     .c-button:focus-visible {

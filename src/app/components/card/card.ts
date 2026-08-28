@@ -30,6 +30,7 @@ export type CardVariant = 'default' | 'featured';
     .c-card--featured {
       background: var(--color-surface);
       border-color: var(--color-border-strong);
+      box-shadow: var(--shadow-05);
     }
   `,
 })

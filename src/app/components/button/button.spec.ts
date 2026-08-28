@@ -46,4 +46,14 @@ describe('ButtonComponent', () => {
     const btn = fixture.nativeElement.querySelector('button');
     expect(btn.getAttribute('type')).toBe('submit');
   });
+
+  it('keeps a pressed visual state without the resting shadow on active', () => {
+    const styles = (
+      (ButtonComponent as unknown as { ɵcmp?: { styles?: string[] } }).ɵcmp?.styles ?? []
+    ).join(' ');
+
+    expect(styles).toMatch(
+      /\.c-button(?:\[[^\]]+\])?:active:not\(:disabled\)\s*\{[^}]*box-shadow:\s*var\(--shadow-none\);/s,
+    );
+  });
 });
