@@ -5,10 +5,6 @@ export type BadgeVariant = 'neutral' | 'success' | 'warning' | 'error';
 @Component({
   selector: 'app-badge',
   standalone: true,
-  imports: [NgClass],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <span class="c-badge" [ngClass]="variantClass">
   template: `
     <span class="c-badge" [class]="'c-badge--' + variant">
       <ng-content></ng-content>
@@ -18,37 +14,34 @@ export type BadgeVariant = 'neutral' | 'success' | 'warning' | 'error';
     .c-badge {
       display: inline-flex;
       align-items: center;
-      border-radius: var(--radius-pill);
-      padding: 0.35rem 0.7rem;
-      font-size: var(--font-size-label);
-      letter-spacing: 0.06em;
+      border-radius: var(--radius-none);
+      padding: var(--space-2) var(--space-3);
+      font-family: var(--font-mono);
+      font-size: var(--fs-xs);
+      letter-spacing: var(--ls-mono);
       text-transform: uppercase;
-      font-weight: 700;
-      border: 1px solid transparent;
+      font-weight: var(--fw-bold);
+      border: 2px solid var(--color-border-strong);
     }
 
     .c-badge--neutral {
-      background: var(--color-surface-muted);
-      color: var(--color-text);
-      border-color: var(--color-border);
+      background: var(--color-surface-sunken);
+      color: var(--color-text-primary);
     }
 
     .c-badge--success {
-      background: rgba(61, 108, 82, 0.12);
+      background: rgba(123, 164, 58, 0.16);
       color: var(--color-success);
-      border-color: rgba(61, 108, 82, 0.35);
     }
 
     .c-badge--warning {
-      background: rgba(215, 145, 45, 0.12);
+      background: rgba(166, 93, 46, 0.16);
       color: var(--color-warning);
-      border-color: rgba(215, 145, 45, 0.35);
     }
 
     .c-badge--error {
-      background: rgba(173, 63, 45, 0.12);
+      background: rgba(229, 57, 53, 0.16);
       color: var(--color-error);
-      border-color: rgba(173, 63, 45, 0.35);
     }
   `,
 })

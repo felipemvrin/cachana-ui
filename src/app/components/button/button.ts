@@ -10,6 +10,8 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
     <button
       class="c-button"
       [class]="variantClass"
+      [class.c-button--sm]="size === 'sm'"
+      [class.c-button--lg]="size === 'lg'"
       [attr.type]="type"
       [disabled]="disabled"
       [attr.aria-disabled]="disabled ? 'true' : null"
@@ -26,32 +28,33 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
 
     .c-button {
       appearance: none;
-      border: 1px solid transparent;
-      border-radius: var(--radius-pill);
-      background: var(--color-primary);
-      color: #fff;
-      padding: 0.7rem 1.2rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
+      border: 2px solid transparent;
+      border-radius: var(--radius-md);
+      background: var(--color-bosque);
+      color: var(--color-text-inverse);
+      padding: var(--space-3) var(--space-5);
+      font-family: var(--font-heading);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-heading);
       cursor: pointer;
       transition:
         background var(--motion-fast),
         transform var(--motion-fast),
         box-shadow var(--motion-fast);
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-02);
     }
 
     .c-button:hover:not(:disabled) {
-      transform: translateY(-1px);
-      filter: brightness(0.98);
+      transform: translate(1px, 1px);
     }
 
     .c-button:active:not(:disabled) {
-      transform: translateY(0);
+      transform: translate(2px, 3px);
+      box-shadow: none;
     }
 
     .c-button:focus-visible {
-      outline: 3px solid var(--color-accent);
+      outline: 3px solid var(--color-azul-micro);
       outline-offset: 2px;
     }
 
@@ -62,20 +65,34 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
     }
 
     .c-button--primary {
-      background: var(--color-primary);
-      color: #fff;
+      background: var(--color-micro-amarillo);
+      border-color: var(--color-border-strong);
+      color: var(--color-text-primary);
+      box-shadow: var(--shadow-04);
     }
 
     .c-button--secondary {
       background: var(--color-surface);
-      border-color: var(--color-border);
-      color: var(--color-text);
+      border-color: var(--color-border-strong);
+      color: var(--color-text-primary);
+      box-shadow: var(--shadow-01);
     }
 
     .c-button--ghost {
       background: transparent;
-      border-color: var(--color-border);
-      color: var(--color-text);
+      border-color: var(--color-border-strong);
+      color: var(--color-text-primary);
+      box-shadow: none;
+    }
+
+    .c-button--sm {
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--fs-sm);
+    }
+
+    .c-button--lg {
+      padding: var(--space-4) var(--space-6);
+      font-size: var(--fs-md);
     }
 
     .c-button__content {
