@@ -1,0 +1,4 @@
+@mixin paper-texture {
+  background-image: url('/assets/textures/paper-noise.svg');
+  background-blend-mode: multiply;
+}
