@@ -47,6 +47,16 @@ describe('ButtonComponent', () => {
     expect(btn.getAttribute('type')).toBe('submit');
   });
 
+  it('keeps native button semantics and exposes disabled state', () => {
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.tagName).toBe('BUTTON');
+    expect(btn.getAttribute('aria-disabled')).toBeNull();
+
+    fixture.componentRef.setInput('disabled', true);
+    fixture.detectChanges();
+    expect(btn.getAttribute('aria-disabled')).toBe('true');
+  });
+
   it('keeps a pressed visual state without the resting shadow on active', () => {
     const styles = (
       (ButtonComponent as unknown as { ɵcmp?: { styles?: string[] } }).ɵcmp?.styles ?? []
