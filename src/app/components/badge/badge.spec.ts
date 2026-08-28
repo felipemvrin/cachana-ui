@@ -1,10 +1,28 @@
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { BadgeComponent } from './badge';
 
 describe('BadgeComponent', () => {
-  it('renders the badge content', () => {
-    const component = new BadgeComponent();
-    component.variant = 'success';
+  let fixture: ComponentFixture<BadgeComponent>;
 
-    expect(component.variant).toBe('success');
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [BadgeComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(BadgeComponent);
+    fixture.detectChanges();
+  });
+
+  it('renders a span with the base badge class', () => {
+    const span = fixture.nativeElement.querySelector('span');
+    expect(span).toBeTruthy();
+    expect(span.classList).toContain('c-badge');
+  });
+
+  it('applies the correct variant class', () => {
+    fixture.componentRef.setInput('variant', 'success');
+    fixture.detectChanges();
+    const span = fixture.nativeElement.querySelector('span');
+    expect(span.classList).toContain('c-badge--success');
   });
 });

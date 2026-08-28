@@ -1,23 +1,49 @@
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { ButtonComponent } from './button';
 
 describe('ButtonComponent', () => {
-  it('renders a button with the provided content', () => {
-    const component = new ButtonComponent();
-    component.variant = 'primary';
+  let fixture: ComponentFixture<ButtonComponent>;
 
-    const variantClass = component['variantClass'] as string;
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ButtonComponent],
+    }).compileComponents();
 
-    expect(variantClass).toBe('c-button--primary');
-    expect(component.disabled).toBe(false);
+    fixture = TestBed.createComponent(ButtonComponent);
+    fixture.detectChanges();
+  });
+
+  it('renders a button element with the base class', () => {
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn).toBeTruthy();
+    expect(btn.classList).toContain('c-button');
+  });
+
+  it('applies the correct variant class', () => {
+    fixture.componentRef.setInput('variant', 'secondary');
+    fixture.detectChanges();
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.classList).toContain('c-button--secondary');
+  });
+
+  it('applies sm size class', () => {
+    fixture.componentRef.setInput('size', 'sm');
+    fixture.detectChanges();
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.classList).toContain('c-button--sm');
   });
 
   it('disables the button when disabled is true', () => {
-    const component = new ButtonComponent();
-    component.disabled = true;
+    fixture.componentRef.setInput('disabled', true);
+    fixture.detectChanges();
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.disabled).toBe(true);
+  });
 
-    const variantClass = component['variantClass'] as string;
-
-    expect(component.disabled).toBe(true);
-    expect(variantClass).toBe('c-button--primary');
+  it('sets the type attribute', () => {
+    fixture.componentRef.setInput('type', 'submit');
+    fixture.detectChanges();
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.getAttribute('type')).toBe('submit');
   });
 });

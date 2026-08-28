@@ -1,21 +1,21 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export type InputState = 'default' | 'error';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [CommonModule],
   template: `
     <label class="c-input" [class.c-input--error]="state === 'error'">
-      <span class="c-input__label" *ngIf="label">{{ label }}</span>
+      @if (label) {
+        <span class="c-input__label">{{ label }}</span>
+      }
       <input
         [type]="type"
         [value]="value"
         [disabled]="disabled"
         [attr.aria-invalid]="state === 'error' ? 'true' : null"
-        [attr.aria-label]="label || ariaLabel"
+        [attr.aria-label]="label || ariaLabel || null"
         [placeholder]="placeholder"
         (input)="onInput($event)"
       />
@@ -77,9 +77,11 @@ export class InputComponent {
   @Input() disabled = false;
   @Input() state: InputState = 'default';
   @Input() ariaLabel = '';
+  @Output() valueChange = new EventEmitter<string>();
 
   onInput(event: Event): void {
     const input = event.target as HTMLInputElement;
     this.value = input.value;
+    this.valueChange.emit(this.value);
   }
 }

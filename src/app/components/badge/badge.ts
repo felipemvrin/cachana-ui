@@ -31,24 +31,20 @@ export type BadgeVariant = 'neutral' | 'success' | 'warning' | 'error';
 
     .c-badge--success {
       background: rgba(123, 164, 58, 0.16);
-      color: var(--color-success);
+      color: var(--color-success-text);
     }
 
     .c-badge--warning {
       background: rgba(166, 93, 46, 0.16);
-      color: var(--color-warning);
+      color: var(--color-warning-text);
     }
 
     .c-badge--error {
       background: rgba(229, 57, 53, 0.16);
-      color: var(--color-error);
+      color: var(--color-error-text);
     }
   `,
 })
 export class BadgeComponent {
   @Input() variant: BadgeVariant = 'neutral';
-
-  protected get variantClass(): string {
-    return `c-badge--${this.variant}`;
-  }
 }

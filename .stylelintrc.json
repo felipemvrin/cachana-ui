@@ -2,7 +2,7 @@
   "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "selector-class-pattern": "^[a-z0-9-]+$",
-    "scss/no-global-function-names": "off",
+    "scss/no-global-function-names": null,
     "color-function-notation": "legacy",
     "alpha-value-notation": "number"
   }

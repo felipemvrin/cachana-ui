@@ -26,6 +26,9 @@
   --color-warning: var(--color-lenga);
   --color-error: var(--color-rojo-micro);
   --color-info: var(--color-azul-micro);
+  --color-success-text: #3d6018;
+  --color-warning-text: #6e3810;
+  --color-error-text: #911410;
   --color-primary: var(--color-bosque);
   --color-secondary: var(--color-tierra);
   --color-accent: var(--color-micro-amarillo);
@@ -95,9 +98,9 @@
   --letter-spacing-display: var(--ls-display);
   --letter-spacing-heading: var(--ls-heading);
   --shadow-none: none;
-  --shadow-01: 0 1px 0 rgba(42, 36, 28, 0.15);
-  --shadow-02: 0 2px 4px rgba(42, 36, 28, 0.12);
-  --shadow-03: 0 4px 8px rgba(42, 36, 28, 0.16);
+  --shadow-01: 0 1px 0 rgb(42, 36, 28, 0.15);
+  --shadow-02: 0 2px 4px rgb(42, 36, 28, 0.12);
+  --shadow-03: 0 4px 8px rgb(42, 36, 28, 0.16);
   --shadow-04: 2px 3px 0 var(--color-border-strong);
   --shadow-05: 4px 5px 0 var(--color-border-strong);
   --shadow-sm: var(--shadow-02);
