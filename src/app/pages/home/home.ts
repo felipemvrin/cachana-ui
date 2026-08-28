@@ -34,7 +34,7 @@ import { InputComponent } from '../../components/input/input';
           </p>
           <div class="hero__actions">
             <app-button variant="primary">Ver proyecto</app-button>
-            <app-button variant="secondary">Revisar sistema</app-button>
+            <app-button variant="secondary" (click)="openStorybook()"> Revisar sistema </app-button>
           </div>
           <ul class="hero__meta" aria-label="Highlights">
             <li>Design Tokens</li>
@@ -347,4 +347,8 @@ import { InputComponent } from '../../components/input/input';
     }
   `,
 })
-export class HomePageComponent {}
+export class HomePageComponent {
+  openStorybook(): void {
+    window.open('http://localhost:6006', '_blank', 'noopener,noreferrer');
+  }
+}
