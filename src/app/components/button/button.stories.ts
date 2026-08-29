@@ -15,7 +15,7 @@ const meta: Meta<ButtonComponent> = {
   },
   render: (args: Partial<ButtonComponent>) => ({
     props: args,
-    template: `<app-button [variant]="variant" [disabled]="disabled">Acción</app-button>`,
+    template: `<app-button [variant]="variant" [size]="size" [disabled]="disabled">Acción</app-button>`,
   }),
   argTypes: {
     variant: {
@@ -49,8 +49,12 @@ export const Focus: Story = {
   args: { variant: 'secondary', disabled: false },
   render: (args) => ({
     props: args,
-    template: `<app-button [variant]="variant" [disabled]="disabled" autofocus>Acción enfocada</app-button>`,
+    template: `<app-button [variant]="variant" [disabled]="disabled">Acción enfocada</app-button>`,
   }),
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const button = canvasElement.querySelector('button');
+    button?.focus();
+  },
   parameters: {
     docs: {
       description: {
