@@ -4,9 +4,9 @@
 
 ## Fase actual
 
-**Fase:** accesibilidad y contratos de componentes
-**Estado:** En progreso
-**Rama:** `test/accessibility-components`
+**Fase:** documentación de componentes en Storybook
+**Estado:** Completado
+**Rama:** `docs/storybook-component-guides`
 
 ## Completado
 
@@ -21,32 +21,31 @@
 - Saneamiento de colores y gradientes hardcodeados en la home.
 - Comando de lint operativo para los estilos actuales.
 - Estado base verificado antes de iniciar la fase: 21 tests, lint y build correctos.
+- Guías de uso, variantes y estados documentadas en las stories de componentes.
+- Casos de accesibilidad documentados en Button, Input, Badge y Card.
 
 ## Validaciones
 
-`npm test`: 26 tests aprobados.
+- `npm test`: 26 tests aprobados.
+- `npm run build-storybook`: correcto.
 
 - `npm run build`: correcto.
 - `npm run build-storybook`: correcto en la validación anterior.
 - `git diff --check`: correcto.
 
-| Alta | Añadir pruebas de accesibilidad para componentes | Completado |
-
-| Alta | Documentar estados y casos de uso en Storybook | En progreso |
-
-| Prioridad                                                                                                                                         | Tarea                                             | Estado      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ----------- |
-| Documentar estados y casos de uso en Storybook, empezando por Button, Input, Badge y Card. Trabajar en la rama `docs/storybook-component-guides`. |
-| Alta                                                                                                                                              | Documentar estados y casos de uso en Storybook    | Pendiente   |
-| Media                                                                                                                                             | Migrar aliases heredados de tokens y retirarlos   | No iniciado |
-| Media                                                                                                                                             | Separar la librería Angular de la home/portfolio  | No iniciado |
-| Media                                                                                                                                             | Configurar CI para lint, tests, build y Storybook | No iniciado |
-| Baja                                                                                                                                              | Revisar tamaño de bundles y warnings de Storybook | No iniciado |
-| Baja                                                                                                                                              | Revisar vulnerabilidades de `npm audit`           | No iniciado |
+| Prioridad | Tarea                                             | Estado      |
+| --------- | ------------------------------------------------- | ----------- |
+| Alta      | Añadir pruebas de accesibilidad para componentes  | Completado  |
+| Alta      | Documentar estados y casos de uso en Storybook    | Completado  |
+| Media     | Migrar aliases heredados de tokens y retirarlos   | No iniciado |
+| Media     | Separar la librería Angular de la home/portfolio  | No iniciado |
+| Media     | Configurar CI para lint, tests, build y Storybook | No iniciado |
+| Baja      | Revisar tamaño de bundles y warnings de Storybook | No iniciado |
+| Baja      | Revisar vulnerabilidades de `npm audit`           | No iniciado |
 
 ## Próxima acción
 
-Añadir pruebas de accesibilidad para Button, Input, Badge y Card, empezando por navegación con teclado, labels, estados disabled y atributos ARIA. Trabajar en la rama `test/accessibility-components`.
+Configurar CI para ejecutar lint, tests, build y build de Storybook en cada Pull Request. Crear la rama `ci/github-actions` desde `main`.
 
 ## Riesgos y notas
 
