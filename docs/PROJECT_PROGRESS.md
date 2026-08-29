@@ -4,9 +4,9 @@
 
 ## Fase actual
 
-**Fase:** documentación de componentes en Storybook
-**Estado:** Completado
-**Rama:** `docs/storybook-component-guides`
+**Fase:** automatización de calidad con CI
+**Estado:** En progreso
+**Rama:** `ci/github-actions`
 
 ## Completado
 
@@ -23,14 +23,15 @@
 - Estado base verificado antes de iniciar la fase: 21 tests, lint y build correctos.
 - Guías de uso, variantes y estados documentadas en las stories de componentes.
 - Casos de accesibilidad documentados en Button, Input, Badge y Card.
+- Corrección del `aria-label` del input para reflejar la etiqueta visible, dejando la accesibilidad de componentes validada.
+- Workflow de GitHub Actions configurado para lint + tests + build + Storybook
 
 ## Validaciones
 
+- `npm run lint`: correcto.
 - `npm test`: 26 tests aprobados.
-- `npm run build-storybook`: correcto.
-
 - `npm run build`: correcto.
-- `npm run build-storybook`: correcto en la validación anterior.
+- `npm run build-storybook`: correcto.
 - `git diff --check`: correcto.
 
 | Prioridad | Tarea                                             | Estado      |
@@ -39,13 +40,13 @@
 | Alta      | Documentar estados y casos de uso en Storybook    | Completado  |
 | Media     | Migrar aliases heredados de tokens y retirarlos   | No iniciado |
 | Media     | Separar la librería Angular de la home/portfolio  | No iniciado |
-| Media     | Configurar CI para lint, tests, build y Storybook | No iniciado |
+| Media     | Configurar CI para lint, tests, build y Storybook | Completado  |
 | Baja      | Revisar tamaño de bundles y warnings de Storybook | No iniciado |
 | Baja      | Revisar vulnerabilidades de `npm audit`           | No iniciado |
 
 ## Próxima acción
 
-Configurar CI para ejecutar lint, tests, build y build de Storybook en cada Pull Request. Crear la rama `ci/github-actions` desde `main`.
+Revisar el workflow en GitHub, hacer commit del cambio y abrir el Pull Request para que la validación se ejecute en la rama.
 
 ## Riesgos y notas
 

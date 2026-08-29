@@ -15,7 +15,7 @@ export type InputState = 'default' | 'error';
         [value]="value"
         [disabled]="disabled"
         [attr.aria-invalid]="state === 'error' ? 'true' : null"
-        [attr.aria-label]="!label && ariaLabel ? ariaLabel : null"
+        [attr.aria-label]="label || ariaLabel || null"
         [placeholder]="placeholder"
         (input)="onInput($event)"
       />
