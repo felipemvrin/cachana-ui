@@ -4,6 +4,15 @@ import { InputComponent } from './input';
 const meta: Meta<InputComponent> = {
   title: 'Components/Input',
   component: InputComponent,
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Use Input with a visible label whenever possible. Use ariaLabel only when the visual label is intentionally omitted.',
+      },
+    },
+  },
   render: (args) => ({
     props: args,
     template: `<app-input [label]="label" [placeholder]="placeholder" [type]="type" [disabled]="disabled" [state]="state"></app-input>`,
